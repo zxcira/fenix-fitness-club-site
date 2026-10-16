@@ -39,16 +39,7 @@ h2{font-size:2.5rem;text-align:center;color:var(--orange);margin-bottom:3rem;tex
 .price-table th{background:var(--orange);color:var(--dark);font-weight:800;text-transform:uppercase}
 .price-table tr:hover td{background:#222}
 
-/* EGG ANIMATION */
-.egg-section{position:relative;min-height:100vh;display:flex;justify-content:center;align-items:center;background:#000;overflow:hidden}
-.egg{width:200px;height:280px;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280"><ellipse cx="100" cy="140" rx="80" ry="120" fill="%23ff6600" stroke="%23ff8800" stroke-width="3"/></svg>') center/contain no-repeat;opacity:0;transition:opacity .5s;animation:float 3s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-.egg.crack{background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280"><ellipse cx="100" cy="140" rx="80" ry="120" fill="%23cc5500"/><path d="M100 60 L95 140 L105 140 Z" fill="%23111"/><path d="M80 100 L120 120" stroke="%23111" stroke-width="3"/><path d="M70 160 L130 180" stroke="%23111" stroke-width="3"/></svg>') center/contain no-repeat;animation:shake .5s ease-in-out}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-.phoenix{position:absolute;width:350px;height:350px;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350"><circle cx="175" cy="175" r="150" fill="%23ff6600" opacity=".8"/><path d="M175 50 L200 150 L300 175 L200 200 L175 300 L150 200 L50 175 L150 150 Z" fill="%23ffaa00"/></svg>') center/contain no-repeat;opacity:0;transform:scale(0.3);transition:all 1s ease-out}
-.phoenix.show{opacity:1;transform:scale(1)}
-.egg-text{position:absolute;bottom:10%;color:var(--orange);font-size:1.5rem;text-align:center;opacity:0;transition:opacity 1s}
-.egg-text.show{opacity:1}
+/* EGG ANIMATION УБРАНО */
 
 /* CONTACTS */
 .contacts{background:var(--gray);text-align:center}
@@ -103,14 +94,7 @@ footer{background:#000;text-align:center;padding:2rem;color:#666;font-size:.9rem
     </table>
 </section>
 
-<!-- EGG ANIMATION -->
-<section class="egg-section" id="egg">
-    <div class="egg-bg"></div>
-    <div class="egg"></div>
-    <div class="phoenix"></div>
-    <div class="egg-text">🔥 ВОССТАНЬ ИЗ ПЕПЛА!<br>Начни тренироваться сегодня</div>
-</section>
-
+<!-- EGG ANIMATION УБРАНО -->
 <!-- CONTACTS -->
 <section class="contacts">
     <h2>Контакты</h2>
@@ -125,26 +109,7 @@ footer{background:#000;text-align:center;padding:2rem;color:#666;font-size:.9rem
 </footer>
 
 <script>
-// Анимация яйца при скролле
-const eggSection = document.querySelector('.egg-section');
-const egg = document.querySelector('.egg');
-const phoenix = document.querySelector('.phoenix');
-const eggText = document.querySelector('.egg-text');
-let triggered = false;
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !triggered) {
-            triggered = true;
-            egg.style.opacity = '1';
-            setTimeout(() => egg.classList.add('crack'), 1200);
-            setTimeout(() => phoenix.classList.add('show'), 2000);
-            setTimeout(() => eggText.classList.add('show'), 2500);
-        }
-    });
-}, { threshold: 0.5 });
-
-observer.observe(eggSection);
+// Скрипт анимации яйца удалён
 </script>
 
 </body>
